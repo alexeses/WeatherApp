@@ -47,8 +47,8 @@ public class WeatherActivity extends AppCompatActivity {
         TextView tvWind2 = findViewById(R.id.tvWind2);
         TextView tvSummary = findViewById(R.id.tvSummary);
 
-        Double latitude = Double.valueOf(getIntent().getStringExtra("latitude"));
-        Double longitude = Double.valueOf(getIntent().getStringExtra("longitude"));
+        Double latitude = getIntent().getDoubleExtra("latitude", 0);
+        Double longitude = getIntent().getDoubleExtra("longitude", 0);
 
         Retrofit retrofit = RetrofitClient.getClient(APIRestService.BASE_URL);
         APIRestService apiRestService = retrofit.create(APIRestService.class);

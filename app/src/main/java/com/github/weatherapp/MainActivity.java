@@ -27,12 +27,27 @@ public class MainActivity extends AppCompatActivity {
             Double latitude = Double.valueOf(etLatitude.getText().toString());
             Double longitude = Double.valueOf(etLongitude.getText().toString());
 
-            Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
-            intent.putExtra("latitude", latitude.toString());
-            intent.putExtra("longitude", longitude.toString());
-            startActivity(intent);
 
+            if (checkValid(latitude, longitude)) {
+                etLatitude.setError("Please enter the latitude");
+                etLongitude.setError("Please enter the longitude");
+            } else {
+                Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
+                intent.putExtra("latitude", latitude);
+                intent.putExtra("longitude", longitude);
+                startActivity(intent);
+            }
         });
 
+    }
+
+    private boolean checkValid(Double latitude, Double longitude) {
+        if (latitude < -90 || latitude > 90) {
+            return true;
+        } else if (longitude < -180 || longitude > 180) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
