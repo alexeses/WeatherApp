@@ -5,7 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class WeatherRes {
 
-
     @SerializedName("latitude")
     @Expose
     private double latitude;

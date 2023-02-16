@@ -27,13 +27,10 @@ public class MainActivity extends AppCompatActivity {
             Double latitude = Double.valueOf(etLatitude.getText().toString());
             Double longitude = Double.valueOf(etLongitude.getText().toString());
 
-
-
-                // Get data and send to WeatherActivity class
-                Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
-                intent.putExtra("latitude", latitude.toString());
-                intent.putExtra("longitude", longitude.toString());
-                startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
+            intent.putExtra("latitude", latitude.toString());
+            intent.putExtra("longitude", longitude.toString());
+            startActivity(intent);
 
         });
 
