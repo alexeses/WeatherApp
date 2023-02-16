@@ -99,9 +99,7 @@ public class WeatherActivity extends AppCompatActivity {
         } else {
             i.setImageResource(R.drawable.clear_day);
         }
-        System.out.println("El tiempo es: " + s);
     }
-
 
     private String farToCel(Double temperature) {
         return String.valueOf(Math.round((temperature - 32) * 5 / 9));

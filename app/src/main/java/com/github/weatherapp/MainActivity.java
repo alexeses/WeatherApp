@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
             Double latitude = Double.valueOf(etLatitude.getText().toString());
             Double longitude = Double.valueOf(etLongitude.getText().toString());
 
-
             if (checkValid(latitude, longitude)) {
                 etLatitude.setError("Please enter the latitude");
                 etLongitude.setError("Please enter the longitude");
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     private boolean checkValid(Double latitude, Double longitude) {
